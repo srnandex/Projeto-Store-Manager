@@ -12,7 +12,14 @@ const findById = async (id) => {
   return result;
 };
 
+const registerNewProduct = async (name) => {
+  const result = await storeModel.registerNewProduct(name);
+  // if (!result) return [];
+  return result;
+};
+
 module.exports = {
   getAll,
   findById,
+  registerNewProduct,
 };

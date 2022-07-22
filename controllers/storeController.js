@@ -17,7 +17,17 @@ const findById = async (req, res) => {
   res.status(200).json(result);
 };
 
+const registerNewProduct = async (req, res) => {
+  const { name } = req.body;
+  const result = await storeServices.registerNewProduct(name);
+  // if (result.length === 0) {
+  //   return res.status(404).json({ message: 'Product not found' });
+  // }
+  res.status(201).json(result);
+};
+
 module.exports = {
   getAll,
   findById,
+  registerNewProduct,
 };
